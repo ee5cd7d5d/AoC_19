@@ -1,10 +1,8 @@
 import java.io.File
 import kotlin.math.floor
 
-const val rootPath = "/home/pedro/Projects/KOTLIN/AoC_19/"
-const val mainPath = rootPath + "src/main/"
 
-fun readInput_1(path: String): List<Int> {
+fun readInputNewline(path: String): List<Int> {
     val file = File(path)
     return file.readText().lines().map{ it.toInt() }
 }
@@ -23,7 +21,7 @@ fun calculateAccumulateSingleModuleFuel(mass: Int): Int {
 }
 
 fun main(){
-    val input = readInput_1(mainPath + "resources/day_1.txt")
+    val input = readInputNewline(mainPath + "resources/day_1.txt")
     val result1 = input.map{ calculateSingleModuleFuel(it) }.sum()
     val result2 = input.map{ calculateAccumulateSingleModuleFuel(it) }.sum()
     print("Task 1: $result1\n")
